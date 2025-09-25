@@ -1,0 +1,30 @@
+:root { --fg:#111; --bg:#fff; --muted:#666; --border:#e8e8e8; --accent:#111; --radius:14px; }
+* { box-sizing: border-box; }
+html,body { margin:0; padding:0; background:var(--bg); color:var(--fg); font-family:"Noto Sans", system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+.wrap { width:min(100%, 980px); margin:0 auto; padding:24px; }
+h1 { font-size: clamp(28px, 4vw, 40px); margin: 24px 0 8px; letter-spacing:-0.02em; }
+.subtitle { color:var(--muted); margin:0 0 12px; }
+.card { border:1px solid var(--border); border-radius:var(--radius); padding:20px; margin:18px 0; background:#fff; }
+h2 { font-size:18px; margin:0 0 12px; }
+.grid { display:grid; gap:12px; grid-template-columns: 1fr 1fr; }
+.grid label { display:flex; flex-direction:column; gap:6px; font-weight:600; }
+.grid textarea, .grid input, .editor textarea { width:100%; padding:12px 12px; border:1px solid var(--border); border-radius:10px; font:inherit; background:#fff; color:var(--fg); outline:none; transition:border-color .15s ease; }
+.grid textarea:focus, .grid input:focus, .editor textarea:focus { border-color:#bbb; }
+.grid textarea { resize:vertical; }
+@media (max-width: 760px){ .grid { grid-template-columns: 1fr; } }
+.row { display:flex; gap:10px; align-items:center; margin-top:8px; }
+.primary, .ghost { cursor:pointer; border-radius:10px; padding:10px 14px; font-weight:600; }
+.primary { background:var(--fg); color:#fff; border:1px solid var(--fg); }
+.primary:disabled { opacity:.6; cursor:not-allowed; }
+.ghost { background:#fff; color:var(--fg); border:1px solid var(--border); }
+.select { padding:10px 12px; border:1px solid var(--border); border-radius:10px; background:#fff; color:var(--fg); }
+.tip { color:var(--muted); margin:10px 0 0; }
+.editor { display:flex; flex-direction:column; gap:10px; }
+.editor-actions { display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end; }
+.steps { margin: 8px 0 0 18px; }
+details { margin-top:10px; }
+#toast { position:fixed; left:50%; bottom:18px; transform:translateX(-50%) translateY(20px); opacity:0; background:#111; color:#fff; padding:10px 14px; border-radius:999px; transition: all .22s ease; pointer-events:none; }
+#toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
+.foot { color:var(--muted); text-align:center; padding-bottom:40px; }
+button:active { transform: translateY(0.5px); }
+

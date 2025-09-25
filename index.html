@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AI Super Prompt — Copy to Clipboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="importmap">
+  {
+    "imports": {
+      "nanoevents": "https://cdn.skypack.dev/nanoevents@7.0.1"
+    }
+  }
+  </script>
+</head>
+<body>
+  <header class="wrap">
+    <h1>AI Super Prompt</h1>
+    <p class="subtitle">Generate a reusable, structured prompt and copy it with one click.</p>
+  </header>
+
+  <main class="wrap">
+    <section class="card">
+      <h2>1) Describe what you need</h2>
+      <div class="grid">
+        <label>
+          Goal
+          <textarea id="goal" rows="3" placeholder="e.g., Write a compelling product description for a new stainless steel water bottle."></textarea>
+        </label>
+        <label>
+          Audience
+          <input id="audience" type="text" placeholder="e.g., Eco-conscious shoppers, ages 20–40" />
+        </label>
+        <label>
+          Tone
+          <input id="tone" type="text" placeholder="e.g., Clear, confident, benefit-led" />
+        </label>
+        <label>
+          Constraints
+          <textarea id="constraints" rows="3" placeholder="e.g., 120–150 words, include 3 bullet points, avoid jargon"></textarea>
+        </label>
+        <label>
+          Inputs you will provide later (variables)
+          <input id="variables" type="text" placeholder="e.g., {product_name}, {price}, {key_features}" />
+        </label>
+        <label>
+          Format requirements
+          <input id="format" type="text" placeholder="e.g., JSON with keys: headline, bullets[], paragraph" />
+        </label>
+      </div>
+      <div class="row">
+        <button id="generate" class="primary">Generate Super Prompt with AI</button>
+        <button id="example" class="ghost">Try Example</button>
+      </div>
+      <p id="tip" class="tip">Pro tip: Add variables with braces like {product_name}. You can reuse this prompt for multiple items.</p>
+    </section>
+
+    <section class="card">
+      <h2>2) Review and refine</h2>
+      <div class="editor">
+        <textarea id="output" rows="12" placeholder="Your AI-optimized super prompt will appear here. You can edit before copying."></textarea>
+        <div class="editor-actions">
+          <button id="copy" class="primary">Copy to Clipboard</button>
+          <button id="save" class="ghost">Save Preset</button>
+          <select id="presets" class="select"></select>
+          <button id="share" class="ghost">Share Link</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>How to use a Super Prompt</h2>
+      <ol class="steps">
+        <li>Generate or paste your super prompt above.</li>
+        <li>Copy it and paste into your AI tool (ChatGPT, Claude, Gemini, etc.).</li>
+        <li>Replace variables like {product_name} with actual values each time.</li>
+        <li>Save as a preset so you can reuse it in one click.</li>
+      </ol>
+      <details>
+        <summary>What makes a great super prompt?</summary>
+        <ul>
+          <li>Clear goal and audience</li>
+          <li>Concrete constraints (length, format)</li>
+          <li>Variables for reusable parts</li>
+          <li>Explicit evaluation criteria</li>
+          <li>Optional: Few-shot examples</li>
+        </ul>
+      </details>
+    </section>
+  </main>
+
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <footer class="wrap foot">
+    <small>Built for fast, repeatable AI copy workflows.</small>
+  </footer>
+
+  <script type="module" src="./app.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4c6229722a6346bc8eb5cb0e5eae5d41","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
+
